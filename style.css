@@ -124,7 +124,7 @@ section .card {
     margin-bottom: 40px;
     transition: 0.3s;
 }
-section .card:hover {
+section .first:hover {
     color: #fff;
     background: rgba(255, 255, 255, 0.1);
 }
@@ -136,4 +136,15 @@ section .card img{
 }
 section .card p {
     margin-top: 5px;
+}
+
+
+/*portofolio awal*/
+.portfolio .card {
+    padding: 0 0 20px;
+}
+.portfolio .card img {
+    height: 200px;
+    width: 100%;
+    border-radius: 8px 8px 0 0;
 }
