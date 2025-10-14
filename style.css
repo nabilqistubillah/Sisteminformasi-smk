@@ -7,8 +7,10 @@
     font-family: 'Poppins', sans-serif;
     
 }
+
 body {
     background: #f2f2f2;
+    display: flex;
 }
 header{
     position: fixed;
@@ -52,8 +54,8 @@ header{
     position: relative;
     height: 100vh;
     width: 100%;
-    background: url(images/home-bg.jpg);
-    background-position: center;
+    background: url(images/home_bg.JPG);
+    background-position: top;
     background-size: cover;
 }
 .homepage::before {
@@ -63,7 +65,7 @@ header{
     width: 100%;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.5);
 }
 .homepage .content {
     position: relative;
@@ -130,7 +132,7 @@ section .first:hover {
 }
 section .card img{
     height: 120px; 
-    width: 120px;
+    width: 1px;
     border-radius: 50%;
     margin-bottom: 20px;
 }
@@ -138,13 +140,9 @@ section .card p {
     margin-top: 5px;
 }
 
-
-/*portofolio awal*/
-.portfolio .card {
-    padding: 0 0 20px;
-}
+/* bagian portofolio */
 .portfolio .card img {
-    height: 200px;
+    height: 240px;
     width: 100%;
     border-radius: 8px 8px 0 0;
 }

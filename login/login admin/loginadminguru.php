@@ -14,9 +14,9 @@ if ($result->num_rows > 0) {
     $_SESSION['role'] = $row['role'];
 
     if ($row['role'] == 'admin') {
-        header("Location: admin.php");
+        header("Location: daftar_kelas.php");
     } elseif ($row['role'] == 'guru') {
-        header("Location: guru.php");
+        header("Location: daftar_kelas.php");
     }
 } else {
     echo "Login gagal! Username atau password salah.";
