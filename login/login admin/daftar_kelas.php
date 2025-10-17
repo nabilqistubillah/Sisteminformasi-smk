@@ -50,7 +50,7 @@ if (!isset($_SESSION['role']) || ($_SESSION['role'] != 'admin' && $_SESSION['rol
   </style>
 </head>
 <body>
-
+<button style="background: #b0bfff; "><a style="text-decoration: none; background: #6fcf97; color: white;" href="login_adminguru.html"> < Kembali</a></button>
   <h2>Pilih Kelas</h2>
 
   <div class="kelas-container">

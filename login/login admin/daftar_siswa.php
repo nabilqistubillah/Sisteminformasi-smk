@@ -7,11 +7,10 @@ if (!isset($_SESSION['role']) || ($_SESSION['role'] != 'admin' && $_SESSION['rol
 
 $koneksi = new mysqli("localhost", "root", "", "sekolahsmk_db");
 
-// ambil parameter kelas
+// mengambil parameter kelas
 $kelas = isset($_GET['kelas']) ? $_GET['kelas'] : '';
 $cari = isset($_GET['cari']) ? $_GET['cari'] : '';
 
-// query dasar
 $sql = "SELECT * FROM siswa WHERE kelas='$kelas'";
 
 // jika ada pencarian

@@ -25,9 +25,11 @@ $foto = !empty($siswa['foto']) ? "../uploads/foto_siswa/" . $siswa['foto'] : "..
 
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <title>Data Siswa - <?= htmlspecialchars($siswa['nama']) ?></title>
+    
     <style>
         body {
             margin: 0;
@@ -46,7 +48,7 @@ $foto = !empty($siswa['foto']) ? "../uploads/foto_siswa/" . $siswa['foto'] : "..
             width: 300px;
             background: #f5f7fa;
             padding: 30px 20px;
-            box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
         }
 
         .profile {
@@ -102,11 +104,11 @@ $foto = !empty($siswa['foto']) ? "../uploads/foto_siswa/" . $siswa['foto'] : "..
         }
 
         .section {
-            background: rgba(255,255,255,0.9);
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
             padding: 20px;
             margin-bottom: 25px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .section h2 {
@@ -147,72 +149,85 @@ $foto = !empty($siswa['foto']) ? "../uploads/foto_siswa/" . $siswa['foto'] : "..
         }
     </style>
 </head>
+
 <body>
 
-<div class="container">
-    <!-- Sidebar kiri -->
-    <div class="sidebar">
-        <div class="profile">
-            <img src="<?= $foto ?>" alt="Foto <?= htmlspecialchars($siswa['nama']) ?>">
-            <h3><?= htmlspecialchars($siswa['nama']) ?></h3>
-            <p>NISN: <?= htmlspecialchars($siswa['nisn']) ?></p>
-            <p>Kelas: <?= htmlspecialchars($siswa['kelas']) ?></p>
-        </div>
+    <div class="container">
+        <!-- Sidebar kiri -->
+        <div class="sidebar">
+            <div class="profile">
+                <img src="<?= $foto ?>" alt="Foto <?= htmlspecialchars($siswa['nama']) ?>">
+                <h3><?= htmlspecialchars($siswa['nama']) ?></h3>
+                <p>NISN: <?= htmlspecialchars($siswa['nisn']) ?></p>
+                <p>Kelas: <?= htmlspecialchars($siswa['kelas']) ?></p>
+            </div>
 
-        <div class="menu">
-            <a href="datasiswabiodata_admin.php?id=<?= $id ?>">Biodata</a>
-            <a href="datasiswaabsensi_admin.php?id=<?= $id ?>">Absensi</a>
-            <a href="datasiswanilai_admin.php?id=<?= $id ?>">Nilai</a>
-            <a href="datasiswacatatan_admin.php?id=<?= $id ?>">Catatan Perilaku</a>
-        </div>
-    </div>
-
-    <!-- Konten utama -->
-    <div class="content">
-        <div class="section">
-            <h2>Jadwal Pelajaran</h2>
-            <div class="jadwal-grid">
-                <div>Senin
-                    <li>mtk</li>
-                    <li>mtk</li>
-                    <li>mtk</li>
-                </div>
-                <div>Selasa
-                    <li>mtk</li>
-                    <li>mtk</li>
-                    <li>mtk</li>
-                </div>
-                <div>Rabu
-                    <li>mtk</li>
-                    <li>mtk</li>
-                    <li>mtk</li>
-                </div>
-                <div>Kamis
-                    <li>mtk</li>
-                    <li>mtk</li>
-                    <li>mtk</li>
-                </div>
-                <div>Sabtu
-                    <li>mtk</li>
-                    <li>mtk</li>
-                    <li>mtk</li>
-                </div>
-                <div>Ahad
-                    <li>mtk</li>
-                    <li>mtk</li>
-                    <li>mtk</li>
-                </div>
+            <div class="menu">
+                <a href="datasiswabiodata_admin.php?id=<?= $id ?>">Biodata</a>
+                <a href="datasiswaabsensi_admin.php?id=<?= $id ?>">Absensi</a>
+                <a href="datasiswanilai_admin.php?id=<?= $id ?>">Nilai</a>
+                <a href="datasiswacatatan_admin.php?id=<?= $id ?>">Catatan Perilaku</a>
             </div>
         </div>
 
-        <div class="section">
-            <h2>Perkembangan Belajar</h2>
-            <div class="grafik">
-                <p> grafik (nanti)– </p>
+        <!-- Konten utama -->
+        <div class="content">
+            <div class="section">
+                <h2>Jadwal Pelajaran</h2>
+                <div class="jadwal-grid">
+                    <div>Senin
+                        <li>mtk</li>
+                        <li>mtk</li>
+                        <li>mtk</li>
+                    </div>
+                    <div>Selasa
+                        <li>mtk</li>
+                        <li>mtk</li>
+                        <li>mtk</li>
+                    </div>
+                    <div>Rabu
+                        <li>mtk</li>
+                        <li>mtk</li>
+                        <li>mtk</li>
+                    </div>
+                    <div>Kamis
+                        <li>mtk</li>
+                        <li>mtk</li>
+                        <li>mtk</li>
+                    </div>
+                    <div>Sabtu
+                        <li>mtk</li>
+                        <li>mtk</li>
+                        <li>mtk</li>
+                    </div>
+                    <div>Ahad
+                        <li>mtk</li>
+                        <li>mtk</li>
+                        <li>mtk</li>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Perkembangan Belajar</h2>
+                <div class="grafik">
+                    <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar bg-success" style="width: 25%"></div>
+                    </div>
+                    <div class="progress" role="progressbar" aria-label="Info example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar bg-info" style="width: 50%"></div>
+                    </div>
+                    <div class="progress" role="progressbar" aria-label="Warning example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar bg-warning" style="width: 75%"></div>
+                    </div>
+                    <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar bg-danger" style="width: 100%"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 </body>
+
 </html>

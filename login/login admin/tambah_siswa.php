@@ -4,6 +4,11 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
     header("Location: daftar_siswa.php");
     exit;
 }
+
+$koneksi = new mysqli("localhost", "root", "", "sekolahsmk_db");
+
+// Ambil daftar wali (dari tabel users)
+$waliResult = $koneksi->query("SELECT id, username FROM users WHERE role = 'wali'");
 ?>
 
 <!DOCTYPE html>
@@ -14,57 +19,45 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f0f2f5;
+      background: #f1f3f7;
       margin: 0;
-      padding: 20px;
+      padding: 0;
     }
     h2 {
       text-align: center;
-      color: #333;
+      margin-top: 40px;
     }
     form {
+      max-width: 600px;
+      margin: 40px auto;
       background: white;
-      max-width: 500px;
-      margin: 30px auto;
       padding: 25px;
       border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
     }
     label {
-      display: block;
-      margin-bottom: 5px;
       font-weight: bold;
-      color: #555;
     }
     input, select, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
+      padding: 8px;
       border-radius: 6px;
+      border: 1px solid #ccc;
+      width: 100%;
     }
     button {
-      width: 100%;
+      padding: 10px;
       background: #4CAF50;
       color: white;
-      padding: 10px;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
       cursor: pointer;
       font-size: 16px;
     }
     button:hover {
       background: #45a049;
-    }
-    .back {
-      display: block;
-      text-align: center;
-      margin-top: 15px;
-      color: #007BFF;
-      text-decoration: none;
-    }
-    .back:hover {
-      text-decoration: underline;
     }
   </style>
 </head>
@@ -105,10 +98,8 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
     <label>Foto Siswa (opsional):</label>
     <input type="file" name="foto" accept=".jpg, .jpeg, .png">
 
-    <button type="submit">Simpan Siswa</button>
+    <button type="submit">Simpan Data</button>
   </form>
-
-  <a href="javascript:history.back()" class="back">← Kembali</a>
 
 </body>
 </html>
